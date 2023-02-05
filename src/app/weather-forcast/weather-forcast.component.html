@@ -1,0 +1,15 @@
+<input type="text" id="location" name="location" #location >
+<input type="date" id="startDate" name="startDate" #startDate >
+<input type="date"  id="endDate" name="endDate" #endDate >
+<button type="button" (click)="searchByCityAndDate(location.value,startDate.value,endDate.value)">search</button>
+<table>
+    <tr> 
+      <th>Date</th>
+      <th>Temperture</th>
+    </tr>
+    <tr *ngFor="let item of weatherforcast">
+      <td>{{item.dateTime}}</td>
+      <td>{{item.temperature}}</td>
+    </tr>
+    
+  </table>

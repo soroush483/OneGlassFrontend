@@ -1,0 +1,22 @@
+
+<div> 
+  <div>
+    <mat-toolbar>
+      <span>OneGlass Forcasting Application</span>
+    </mat-toolbar>
+
+    <div>
+      <mat-tab-group [backgroundColor]="'primary'" [color]="'warn'">
+        <mat-tab label="Sale Forcast"> 
+          <app-sale-forcast></app-sale-forcast>  
+        </mat-tab>
+        <mat-tab label="Weather Forecast">
+          <app-weather-forcast></app-weather-forcast>
+        </mat-tab>
+        <mat-tab label="Alerts"> 
+          <app-alert></app-alert>  
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
