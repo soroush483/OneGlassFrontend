@@ -20,6 +20,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SaleForcastComponent } from './sale-forcast/sale-forcast.component';
 import { WeatherForcastComponent } from './weather-forcast/weather-forcast.component';
 import { AlertComponent } from './alert/alert.component';
+import { GetAlertsService } from './services/get-alerts.service'
+import { GetSalesForcastService } from './services/get-sales-forcast.service';
+import { GetWeatherForcastService } from './services/get-weather-forcast.service';
 
 
 @NgModule({
@@ -46,7 +49,11 @@ import { AlertComponent } from './alert/alert.component';
     MatInputModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    GetAlertsService,
+    GetSalesForcastService,
+    GetWeatherForcastService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { SaleForecastModel } from './SaleForecastModel';
 import { Component, OnInit } from '@angular/core';
-import { GetSalesForcastService } from '../get-sales-forcast.service';
+import { GetSalesForcastService } from '../services/get-sales-forcast.service';
 
 @Component({
   selector: 'app-sale-forcast',

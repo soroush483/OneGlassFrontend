@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { GetAlertsService } from './get-alerts.service';
-import { GetSalesForcastService } from './get-sales-forcast.service';
-import { GetWeatherForcastService } from './get-weather-forcast.service';
+import { GetAlertsService } from './services/get-alerts.service';
+import { GetSalesForcastService } from './services/get-sales-forcast.service';
+import { GetWeatherForcastService } from './services/get-weather-forcast.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
