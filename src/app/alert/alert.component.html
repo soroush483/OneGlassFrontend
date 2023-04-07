@@ -1,5 +1,11 @@
-<input type="text" id="location" name="location" #location >
+<label for="city">City</label>
+<select id="location" name="location" #location>
+  <option value="Hamburg">Hamburg</option>
+  <option value="Munich">Munich</option>
+</select>
+<label for="startDate">Start Date</label>
 <input type="date" id="startDate" name="startDate" #startDate >
+<label for="endDate">End Date</label>
 <input type="date"  id="endDate" name="endDate" #endDate >
 <button type="button" (click)="searchByCityAndDate(location.value,startDate.value,endDate.value)">search</button>
 <table>

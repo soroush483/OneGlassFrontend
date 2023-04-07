@@ -9,17 +9,17 @@ import { AlertModel } from './AlertModel';
 })
 export class AlertComponent implements OnInit {
   alerts : any;
+
   constructor(private _alertService : GetAlertsService ) {
     this.alerts = {} as AlertModel;
-    
    }
 
   ngOnInit(): void {
   }
+
   searchByCityAndDate(location: string, startDate : string , endDate: string) {
-    this._alertService.getAlert(location,startDate,endDate).subscribe(response=>{
-      this.alerts = response;
-      })
+    this._alertService.getAll(location,startDate,endDate)
+    .subscribe(response=>this.alerts = response);
   }
 
 }

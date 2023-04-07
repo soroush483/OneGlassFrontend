@@ -17,10 +17,9 @@ export class WeatherForcastComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  searchByCityAndDate(location: string, startDate : string , endDate: string) {
-    this._WeatherService.getWheather(location,startDate,endDate).subscribe(response=>{
-      this.weatherforcast = response;
-      })
+  searchByCityAndDate(location: string, startDate : string , endDate: string,apiToken: string) {
+    this._WeatherService.getAll(location,startDate,endDate,apiToken)
+    .subscribe(response=>this.weatherforcast = response);
   }
 
 }

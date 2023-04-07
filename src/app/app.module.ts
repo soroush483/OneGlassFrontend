@@ -1,8 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +21,7 @@ import { AlertComponent } from './alert/alert.component';
 import { GetAlertsService } from './services/get-alerts.service'
 import { GetSalesForcastService } from './services/get-sales-forcast.service';
 import { GetWeatherForcastService } from './services/get-weather-forcast.service';
+import { AppErrorHandler } from './common/app-error-handler';
 
 
 @NgModule({
@@ -52,7 +51,8 @@ import { GetWeatherForcastService } from './services/get-weather-forcast.service
   providers: [
     GetAlertsService,
     GetSalesForcastService,
-    GetWeatherForcastService
+    GetWeatherForcastService,
+    { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent]
 })
