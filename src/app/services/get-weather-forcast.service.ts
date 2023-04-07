@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GetWeatherForcastService {
-
-  constructor(private _http:HttpClient) { }
+export class GetWeatherForcastService extends DataService {
   
-  getWheather( location : string,  startDate : string,  endDate : string)
-  {
-    return this._http.get('https://localhost:7185/WeatherForecast?location='+location+'&startDate='+startDate+'&endDate='+endDate);
+  constructor( http: HttpClient) { 
+    super( 'https://localhost:7185/WeatherForecast',http);
   }
 }

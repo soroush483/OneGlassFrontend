@@ -8,20 +8,18 @@ import { GetSalesForcastService } from '../services/get-sales-forcast.service';
   styleUrls: ['./sale-forcast.component.scss']
 })
 export class SaleForcastComponent implements OnInit {
-  
-saleforcast :  any;
+  saleforcast :  any;
 
   constructor(private _saleForcast : GetSalesForcastService) { 
     this.saleforcast={} as SaleForecastModel;
   }
 
   ngOnInit(): void {
-   
   }
+
   searchByCityAndDate(location: string, startDate : string , endDate: string) {
-    this._saleForcast.getSales(location,startDate,endDate).subscribe(response=>{
-      this.saleforcast = response;
-      })
+    this._saleForcast.getAll(location,startDate,endDate)
+    .subscribe(response=>this.saleforcast = response);
   }
 
 }
