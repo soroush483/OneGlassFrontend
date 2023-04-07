@@ -18,14 +18,11 @@ export class DataService {
       })
     };
     const url = `${this.apiUrl}?location=${location}&startDate=${startDate}&endDate=${endDate}`;
-    return this.http.get<any>(url,httpOptions)
-      .pipe(
-        map((respones: any)=>{
-            respones.json()
-        }),
-        catchError((error: Response) => {
-          return throwError(new AppError(error));
-        })
-      );
+    return this.http.get<any>(url, httpOptions)
+    .pipe(
+      catchError((error: Response) => {
+        return throwError(new AppError(error));
+      })
+    );
   }
 }
