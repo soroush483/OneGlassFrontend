@@ -1,16 +1,17 @@
+<div *ngIf="logIn">
 <label for="city">City</label>
 <select id="location" name="location" #location>
   <option value="Hamburg">Hamburg</option>
   <option value="Munich">Munich</option>
 </select>
-<label for="apiToken">API Token</label>
-<input type="text" id="apiToken" name="apiToken" #apiToken >
+<!-- <label for="apiToken">API Token</label>
+<input type="text" id="apiToken" name="apiToken" #apiToken > -->
 <label for="startDate">Start Date</label>
 <input type="date" id="startDate" name="startDate" #startDate >
 <label for="endDate">End Date</label>
 <input type="date"  id="endDate" name="endDate" #endDate >
-<button type="button" (click)="searchByCityAndDate(location.value,startDate.value,endDate.value,apiToken.value)">search</button>
-<table>
+<button type="button" (click)="searchByCityAndDate(location.value,startDate.value,endDate.value)">search</button>
+<table  *ngIf="weatherforcast.length > 0">
     <tr> 
       <th>Date</th>
       <th>Temperture</th>
@@ -21,3 +22,4 @@
     </tr>
     
   </table>
+</div> 

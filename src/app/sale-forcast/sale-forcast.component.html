@@ -1,3 +1,4 @@
+<div *ngIf="logIn">
 <label for="city">City</label>
 <select id="location" name="location" #location>
   <option value="Hamburg">Hamburg</option>
@@ -8,7 +9,7 @@
 <label for="endDate">End Date</label>
 <input type="date"  id="endDate" name="endDate" #endDate >
 <button type="button" (click)="searchByCityAndDate(location.value,startDate.value,endDate.value)">search</button>
-<table>
+<table  *ngIf="saleforcast.length > 0">
     <tr>
       <th>Location</th>
       <th>Date</th>
@@ -21,3 +22,4 @@
     </tr>
     
   </table>
+</div>
