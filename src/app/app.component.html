@@ -1,22 +1,12 @@
+  <mat-toolbar>
+    <span>OneGlass Forcasting Application</span>
+  </mat-toolbar>
 
-<div> 
-  <div>
-    <mat-toolbar>
-      <span>OneGlass Forcasting Application</span>
-    </mat-toolbar>
-
-    <div>
-      <mat-tab-group [backgroundColor]="'primary'" [color]="'warn'">
-        <mat-tab label="Sale Forcast"> 
-          <app-sale-forcast></app-sale-forcast>  
-        </mat-tab>
-        <mat-tab label="Weather Forecast">
-          <app-weather-forcast></app-weather-forcast>
-        </mat-tab>
-        <mat-tab label="Alerts"> 
-          <app-alert></app-alert>  
-        </mat-tab>
-      </mat-tab-group>
-    </div>
-  </div>
-</div>
+  <nav mat-tab-nav-bar [backgroundColor]="'primary'" [color]="'warn'">
+    <a mat-tab-link 
+    *ngFor="let link of navLinks" 
+    [routerLink]="link.link" 
+    routerLinkActive #rla="routerLinkActive" 
+    [active]="rla.isActive">{{link.label}}</a>
+  </nav>
+  <router-outlet></router-outlet>

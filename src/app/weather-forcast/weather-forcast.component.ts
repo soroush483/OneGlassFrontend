@@ -1,3 +1,5 @@
+import { LoginComponent } from './../login/login.component';
+import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { GetWeatherForcastService } from '../services/get-weather-forcast.service';
 import { WeatherModel } from './WeatherModel';
@@ -9,16 +11,24 @@ import { WeatherModel } from './WeatherModel';
 })
 export class WeatherForcastComponent implements OnInit {
   weatherforcast :  any;
+  apitoken : any;
+  loginService! :LoginComponent;
+  logIn : boolean |undefined;
+  constructor(
+    private _WeatherService: GetWeatherForcastService,
+    private _login:  LoginComponent, 
+    private _loginServiec : LoginService) {
 
-  constructor(private _WeatherService: GetWeatherForcastService) {
     this.weatherforcast={} as WeatherModel;
+    this.logIn = _loginServiec.isLoggedIn;
    }
 
   ngOnInit(): void {
     
   }
-  searchByCityAndDate(location: string, startDate : string , endDate: string,apiToken: string) {
-    this._WeatherService.getAll(location,startDate,endDate,apiToken)
+  searchByCityAndDate(location: string, startDate : string , endDate: string) {
+    const token= this.loginService.tokmitoken;
+    this._WeatherService.getAll(location,startDate,endDate,token)
     .subscribe(response=>this.weatherforcast = response);
   }
 

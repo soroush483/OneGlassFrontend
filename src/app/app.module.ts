@@ -22,6 +22,10 @@ import { GetAlertsService } from './services/get-alerts.service'
 import { GetSalesForcastService } from './services/get-sales-forcast.service';
 import { GetWeatherForcastService } from './services/get-weather-forcast.service';
 import { AppErrorHandler } from './common/app-error-handler';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule,Route } from '@angular/router';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
@@ -29,11 +33,13 @@ import { AppErrorHandler } from './common/app-error-handler';
     AppComponent,
     SaleForcastComponent,
     WeatherForcastComponent,
-    AlertComponent
+    AlertComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
@@ -46,13 +52,16 @@ import { AppErrorHandler } from './common/app-error-handler';
     MatRadioModule,
     MatDatepickerModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [
     GetAlertsService,
     GetSalesForcastService,
     GetWeatherForcastService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
+    LoginComponent,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
