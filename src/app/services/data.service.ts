@@ -21,31 +21,8 @@ export class DataService {
     return this.http.get<any>(url, httpOptions)
     .pipe(
       catchError((error: Response) => {
-        //console.log(error);
-        return throwError(new AppError(error));
-        
+        return throwError(new AppError(error)); 
       })
     );
   }
-
-  // login(username: string, password: string): Observable<string> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //     })
-  //   };
-  //   const body = {
-  //     userName: username,
-  //     password: password
-  //   };
-  //   const url = `${this.apiUrl}/Login`;
-  //   return this.http.post<any>(url, body, httpOptions)
-  //   .pipe(
-  //     catchError((error: any) => {
-  //       return throwError(new AppError(error));
-  //     }
-  //     ),
-  //     map(response => response)
-  //   );
-  // }
 }

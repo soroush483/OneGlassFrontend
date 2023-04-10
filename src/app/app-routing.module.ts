@@ -12,23 +12,6 @@ const routes: Routes = [
   { path: 'weatherforecast', component: WeatherForcastComponent},
   { path: 'alert', component: AlertComponent},
 ];
-// const routes: Routes = [
-//   { path: '', redirectTo: '/login', pathMatch: 'full' },
-//   {
-//     path: 'login',
-//     component: LoginComponent
-//   },
-//   {
-//     path: 'dashboard',
-//     children: [
-//       { path: 'saleforecast', component: SaleForcastComponent },
-//       { path: 'weatherforecast', component: WeatherForcastComponent },
-//       { path: 'alert', component: AlertComponent }
-//     ]
-//   }
-// ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

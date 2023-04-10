@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { GetAlertsService } from './services/get-alerts.service';
-import { GetSalesForcastService } from './services/get-sales-forcast.service';
-import { GetWeatherForcastService } from './services/get-weather-forcast.service';
-import { LoginService } from './services/login.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',

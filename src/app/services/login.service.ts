@@ -11,7 +11,6 @@ import { AppError } from '../common/app-error';
 export class LoginService {
 isLoggedIn = false; 
 private apiUrl = 'https://localhost:7185/api/Login';
-//private tokenCookieName = 'myapp-token';
 public token: any;
 
 constructor(private httpClient: HttpClient) { }
