@@ -13,22 +13,22 @@ export class WeatherForcastComponent implements OnInit {
   weatherforcast :  any;
   apitoken : any;
   loginService! :LoginComponent;
-  logIn : boolean |undefined;
+  isLoggedin : boolean |undefined;
   constructor(
     private _WeatherService: GetWeatherForcastService,
     private _login:  LoginComponent, 
     private _loginServiec : LoginService) {
 
     this.weatherforcast={} as WeatherModel;
-    this.logIn = _loginServiec.isLoggedIn;
+    this.isLoggedin = _loginServiec.isLoggedIn;
    }
 
   ngOnInit(): void {
     
   }
   searchByCityAndDate(location: string, startDate : string , endDate: string) {
-    const token= this.loginService.tokmitoken;
-    this._WeatherService.getAll(location,startDate,endDate,token)
+    this.apitoken = sessionStorage.getItem("jwtToken");
+    this._WeatherService.getAll(location, startDate, endDate, this.apitoken)
     .subscribe(response=>this.weatherforcast = response);
   }
 

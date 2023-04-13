@@ -21,10 +21,11 @@ onSubmit(username: string, password: string) {
     (response: any) => {
       if(response)
       {
-        this.token = response;
-        this.loginService.isLoggedIn = true;
+        sessionStorage.setItem("jwtToken", response.jWtToken);
+        this.loginService.isLoggedIn= true;
         username = '';
         password = '';
+        this.router.navigate(['./saleforecast']);
       }
     },
     (error: any) => {

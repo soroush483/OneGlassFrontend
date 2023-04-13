@@ -9,10 +9,6 @@ export class AppComponent {
   title = 'OneGlassFrontend';
   navLinks!: any[];
   activeLinkIndex = -1
-  salesForcast : any;
-  weatherForcast : any;
-  alerts : any;
-  login : any;
   /**
    *
    */

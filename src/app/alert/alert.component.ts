@@ -10,11 +10,11 @@ import { LoginService } from '../services/login.service';
 })
 export class AlertComponent implements OnInit {
   alerts : any;
-  logIn : boolean | undefined;
+  isLoggedin : boolean | undefined;
 
   constructor(private _alertService : GetAlertsService, private _loginservice:LoginService ) {
     this.alerts = {} as AlertModel;
-    this.logIn = _loginservice.isLoggedIn;
+    this.isLoggedin = _loginservice.isLoggedIn;
    }
 
   ngOnInit(): void {
