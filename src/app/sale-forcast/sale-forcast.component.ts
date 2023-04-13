@@ -10,11 +10,11 @@ import { GetSalesForcastService } from '../services/get-sales-forcast.service';
 })
 export class SaleForcastComponent implements OnInit {
   saleforcast :  any;
-  logIn : boolean | undefined;
+  isLoggedin : boolean | undefined;
 
   constructor(private _saleForcast : GetSalesForcastService, private _loginservice:LoginService ) { 
     this.saleforcast={} as SaleForecastModel;
-    this.logIn =  _loginservice.isLoggedIn;
+    this.isLoggedin =  _loginservice.isLoggedIn;
   }
 
   ngOnInit(): void {
